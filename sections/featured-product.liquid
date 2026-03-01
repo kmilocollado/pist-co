@@ -86,12 +86,21 @@
 
   @media screen and (min-width: 750px) {
     .featured-product-section .product-card__content {
-      --hugged-width: calc(var(--constrained-height) * var(--gallery-aspect-ratio, var(--media-preview-ratio)));
-      width: min(100%, var(--hugged-width));
+      padding-inline: 100px;
       margin-left: auto;
       margin-right: auto;
     }
   }
+
+  .featured-product-section .card-gallery {
+    width: 245px;
+    align-self: center;
+  }
+
+
+
+
+
 {% endstylesheet %}
 
 {% schema %}

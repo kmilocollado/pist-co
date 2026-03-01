@@ -27,7 +27,7 @@
 %}
 
 <product-price
-  class="text-right {{ block_settings.type_preset | default: 'h6' }} spacing-style"
+  class="text-right spacing-style"
   data-block-id="{{ block.id }}"
   data-product-id="{{ product.id }}"
   style="
@@ -36,15 +36,17 @@
   "
   {{ block.shopify_attributes }}
 >
-  {% if product.price_varies and has_swatches_only == false and price_min != blank %}
-    <span class="price">{{ display_price }}</span>
-  {% else %}
-    {% render 'price',
-      show_unit_price: true,
-      show_sale_price_first: block_settings.show_sale_price_first,
-      product_resource: product
-    %}
-  {% endif %}
+  <span class="button button-secondary {{ block_settings.type_preset | default: 'h6' }}">
+    {% if product.price_varies and has_swatches_only == false and price_min != blank %}
+      <span class="price">{{ display_price }}</span>
+    {% else %}
+      {% render 'price',
+        show_unit_price: true,
+        show_sale_price_first: block_settings.show_sale_price_first,
+        product_resource: product
+      %}
+    {% endif %}
+  </span>
 </product-price>
 
 {% schema %}
