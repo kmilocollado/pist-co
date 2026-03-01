@@ -950,6 +950,7 @@
     "resource_reference_product_recommendations": "Muestra recomendaciones basadas en el producto principal",
     "resource_reference_product_review": "Muestra las reseñas del producto principal",
     "resource_reference_product_swatches": "Muestra el muestrario del producto principal",
+    "swatches_visible_when": "El contenido solo se muestra cuando el producto tiene al menos una opción (p. ej. Color) con muestras asignadas en el administrador del producto.",
     "resource_reference_product_title": "Muestra el título del producto principal",
     "resource_reference_product_variant_picker": "Muestra las variantes del producto principal",
     "resource_reference_product_media": "Muestra la multimedia del producto principal",

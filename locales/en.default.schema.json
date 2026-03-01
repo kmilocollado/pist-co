@@ -123,6 +123,7 @@
     "resource_reference_product_sku": "Displays SKU from parent product",
     "resource_reference_product_review": "Displays reviews from parent product",
     "resource_reference_product_swatches": "Displays swatches from parent product",
+    "swatches_visible_when": "Content only shows when the product has at least one option (e.g. Color) with swatches assigned in the product admin.",
     "resource_reference_product_title": "Displays title from parent product",
     "resource_reference_product_variant_picker": "Displays variants from parent product",
     "resource_reference_product_custom_property": "Add customizable input fields to collect custom information that will be added to this order line item, later visible in the order details.",
