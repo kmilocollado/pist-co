@@ -26,6 +26,22 @@
     align-items: baseline;
     gap: var(--gap-sm);
   }
+  .featured-product-content-bottom .variant-picker__form legend {
+    display: none;
+  }
+  .featured-product-content-bottom .variant-option__button-label  {
+    width: fit-content;
+    min-height: fit-content;
+    padding: 0;
+    height: 0;
+    border: 0;
+  }
+  .featured-product-content-bottom .variant-option__button-label:before {
+    border: none;
+  }
+  .featured-product-content-bottom .variant-option__button-label__pill {
+    background: transparent;
+  }
 {% endstylesheet %}
 
 {% schema %}
