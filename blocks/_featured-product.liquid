@@ -10,16 +10,16 @@
   <div class="featured-product-debug" style="margin:1rem 0; padding:1rem; background:#f5f5f5; border:1px solid #ccc; font-size:12px; font-family:monospace;">
     <strong>Debug Featured Product – Variantes</strong>
     <ul style="margin:0.5rem 0 0 1rem; padding:0;">
-      <li>product blank? → {{ _fp_product == blank }}</li>
-      <li>product.id → {{ _fp_product.id }}</li>
-      <li>product.title → {{ _fp_product.title | escape }}</li>
-      <li>has_only_default_variant → {{ _fp_product.has_only_default_variant }}</li>
-      <li>variants.size → {{ _fp_product.variants.size }}</li>
-      <li>options_with_values.size → {{ _fp_product.options_with_values.size }}</li>
+      <li>product blank? {% if _fp_product == blank %}true{% else %}false{% endif %}</li>
+      <li>product.id {{ _fp_product.id }}</li>
+      <li>product.title {{ _fp_product.title | escape }}</li>
+      <li>has_only_default_variant {{ _fp_product.has_only_default_variant }}</li>
+      <li>variants.size {{ _fp_product.variants.size }}</li>
+      <li>options_with_values.size {{ _fp_product.options_with_values.size }}</li>
       {% for opt in _fp_product.options_with_values %}
         <li>Opción {{ forloop.index }}: nombre="{{ opt.name | escape }}", values={{ opt.values | map: 'name' | join: ', ' }}</li>
       {% endfor %}
-      <li>¿Se muestra selector? → {% if _fp_product.has_only_default_variant %}NO (has_only_default_variant=true){% else %}SÍ{% endif %}</li>
+      <li>Se muestra selector? {% if _fp_product.has_only_default_variant %}NO (has_only_default_variant=true){% else %}SI{% endif %}</li>
     </ul>
   </div>
 {% endif %}
