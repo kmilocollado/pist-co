@@ -1,4 +1,28 @@
+{%- liquid
+  assign _fp_product = closest.product
+  assign _fp_debug = true
+  comment
+    Debug variantes: true = muestra el panel. Cuando termines, pon _fp_debug = false.
+  endcomment
+-%}
 
+{% if _fp_debug %}
+  <div class="featured-product-debug" style="margin:1rem 0; padding:1rem; background:#f5f5f5; border:1px solid #ccc; font-size:12px; font-family:monospace;">
+    <strong>Debug Featured Product – Variantes</strong>
+    <ul style="margin:0.5rem 0 0 1rem; padding:0;">
+      <li>product blank? → {{ _fp_product == blank }}</li>
+      <li>product.id → {{ _fp_product.id }}</li>
+      <li>product.title → {{ _fp_product.title | escape }}</li>
+      <li>has_only_default_variant → {{ _fp_product.has_only_default_variant }}</li>
+      <li>variants.size → {{ _fp_product.variants.size }}</li>
+      <li>options_with_values.size → {{ _fp_product.options_with_values.size }}</li>
+      {% for opt in _fp_product.options_with_values %}
+        <li>Opción {{ forloop.index }}: nombre="{{ opt.name | escape }}", values={{ opt.values | map: 'name' | join: ', ' }}</li>
+      {% endfor %}
+      <li>¿Se muestra selector? → {% if _fp_product.has_only_default_variant %}NO (has_only_default_variant=true){% else %}SÍ{% endif %}</li>
+    </ul>
+  </div>
+{% endif %}
 
 {% capture product_card_children %}
   <div class="featured-product-content-top">
@@ -7,15 +31,15 @@
     {% content_for 'block', type: '_featured-product-price', id: 'featured-product-price' %}
   </div>
   {% content_for 'block', type: '_featured-product-gallery', id: 'featured-product-gallery' %}
-  {%- comment -%} Mostrar área del Muestrario siempre que el producto tenga opciones (variantes). El bloque swatches solo pinta contenido cuando hay muestras asignadas. {%- endcomment -%}
-  {% if closest.product.options_with_values.size > 0 %}
+  {%- comment -%} Selector de variantes: muestra todas las opciones (Formatos disponibles, Color, etc.) como botones o desplegables, con o sin muestras. {%- endcomment -%}
+  {% unless _fp_product.has_only_default_variant %}
     <div class="featured-product-content-bottom">
-      {%- content_for 'block', type: 'swatches', id: 'featured-product-swatches' -%}
+      {%- content_for 'block', type: 'variant-picker', id: 'featured-product-variant-picker' -%}
     </div>
-  {% endif %}
+  {% endunless %}
 {% endcapture %}
 
-{% render 'product-card', children: product_card_children, product: closest.product, product_card_gap: 8 %}
+{% render 'product-card', children: product_card_children, product: _fp_product, product_card_gap: 8 %}
 
 {% stylesheet %}
   .featured-product-content-top {

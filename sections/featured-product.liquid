@@ -96,11 +96,7 @@
     width: 245px;
     align-self: center;
   }
-
-
-
-
-
+  
 {% endstylesheet %}
 
 {% schema %}
@@ -199,12 +195,13 @@
               "name": "t:names.image",
               "static": true
             },
-            "featured-product-swatches": {
-              "type": "swatches",
-              "name": "t:names.swatches",
+            "featured-product-variant-picker": {
+              "type": "variant-picker",
+              "name": "t:names.product_variant_picker",
               "static": true,
               "settings": {
-                "hide_padding": true
+                "variant_style": "buttons",
+                "show_swatches": true
               }
             }
           }
