@@ -26,7 +26,7 @@
     align-items: baseline;
     gap: var(--gap-sm);
   }
-  .featured-product-content-bottom .variant-picker__form legend {
+  .variant-picker__form legend {
     display: none;
   }
   .featured-product-content-bottom .variant-option__button-label  {
@@ -37,6 +37,9 @@
     border: 0;
     background: transparent;
     color: var(--color);
+  }
+  .featured-product-content-bottom .variant-option__button-label:has(:checked):hover {
+    
   }
   .featured-product-content-bottom .variant-option--equal-width-buttons {
     display: flex;
