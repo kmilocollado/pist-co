@@ -563,6 +563,19 @@
               </li>
             {%- endfor -%}
           {% endif %}
+          {% if block_settings.show_extra_link and block_settings.extra_link_text != blank %}
+            <li
+              style="--menu-drawer-animation-index: {{ linklist.links.size | plus: 1 }};"
+              class="menu-drawer__list-item--flat{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}{% if block_settings.extra_link_border %} menu-drawer__list-item--extra{% endif %}"
+            >
+              <a
+                href="{{ block_settings.extra_link_url | default: '#' }}"
+                class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
+              >
+                <span class="menu-drawer__menu-item-text wrap-text">{{ block_settings.extra_link_text }}</span>
+              </a>
+            </li>
+          {% endif %}
         </ul>
       </nav>
       <div
@@ -961,6 +974,12 @@
 
   .menu-drawer__list-item--divider {
     border-block-end: 1px solid var(--color-border);
+  }
+
+  .menu-drawer__list-item--extra {
+    border-block-start: 1px solid var(--color-border);
+    margin-block-start: var(--padding-sm);
+    padding-block-start: var(--padding-sm);
   }
 
   .menu-drawer__list-item--deep:not(.menu-drawer__list-item--divider) .menu-drawer__menu {

@@ -47,6 +47,16 @@
                 </a>
               </li>
             {% endfor %}
+            {% if block_settings.show_extra_link and block_settings.extra_link_text != blank %}
+              <li class="{% if block_settings.extra_link_border %}menu-list__item--extra-mobile{% endif %}">
+                <a
+                  href="{{ block_settings.extra_link_url | default: '#' }}"
+                  class="menu-list__item"
+                >
+                  {{- block_settings.extra_link_text -}}
+                </a>
+              </li>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -289,6 +299,12 @@
     border-left: 1px solid var(--color-border);
     padding-left: var(--gap-md, 1rem);
     margin-left: var(--gap-sm, 0.5rem);
+  }
+
+  .menu-list__item--extra-mobile {
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--menu-horizontal-gap);
+    margin-left: calc(var(--menu-horizontal-gap) / 2);
   }
 
   .menu-list__link {

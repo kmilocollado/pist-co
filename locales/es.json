@@ -4,7 +4,7 @@
     "sold_out": "Agotado",
     "email_signup": {
       "label": "Correo electrónico",
-      "placeholder": "Dirección de correo electrónico",
+      "placeholder": "Tu email",
       "success": "¡Gracias por suscribirte!"
     },
     "filter": "Filtro",
