@@ -194,7 +194,7 @@
                         "accordion_dividers": false,
                         "inherit_color_scheme": true,
                         "color_scheme": "",
-                        "heading_preset": "h3",
+                        "heading_preset": "",
                         "link_preset": "paragraph",
                         "padding-block-start": 0,
                         "padding-block-end": 0,
@@ -287,7 +287,7 @@
                         "accordion_dividers": false,
                         "inherit_color_scheme": true,
                         "color_scheme": "",
-                        "heading_preset": "h3",
+                        "heading_preset": "",
                         "link_preset": "paragraph",
                         "padding-block-start": 0,
                         "padding-block-end": 0,
@@ -368,31 +368,57 @@
                       },
                       "blocks": {}
                     },
-                    "menu_tfDzGe": {
-                      "type": "menu",
-                      "name": "t:names.menu",
+                    "button_RyTx4C": {
+                      "type": "button",
+                      "name": "t:names.button",
                       "settings": {
-                        "menu": "main-menu",
-                        "heading": "",
-                        "menu_spacing": 12,
-                        "show_as_accordion": false,
-                        "accordion_icon": "caret",
-                        "accordion_dividers": false,
-                        "inherit_color_scheme": true,
-                        "color_scheme": "",
-                        "heading_preset": "h3",
-                        "link_preset": "paragraph",
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "label": "Instagram",
+                        "link": "#",
+                        "open_in_new_tab": true,
+                        "style_class": "link",
+                        "width": "fit-content",
+                        "custom_width": 100,
+                        "width_mobile": "fit-content",
+                        "custom_width_mobile": 100
+                      },
+                      "blocks": {}
+                    },
+                    "button_EHz8Uy": {
+                      "type": "button",
+                      "name": "t:names.button",
+                      "settings": {
+                        "label": "Linkedin",
+                        "link": "#",
+                        "open_in_new_tab": true,
+                        "style_class": "link",
+                        "width": "fit-content",
+                        "custom_width": 100,
+                        "width_mobile": "fit-content",
+                        "custom_width_mobile": 100
+                      },
+                      "blocks": {}
+                    },
+                    "button_3UFdka": {
+                      "type": "button",
+                      "name": "t:names.button",
+                      "settings": {
+                        "label": "Newsletter",
+                        "link": "#",
+                        "open_in_new_tab": true,
+                        "style_class": "link",
+                        "width": "fit-content",
+                        "custom_width": 100,
+                        "width_mobile": "fit-content",
+                        "custom_width_mobile": 100
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
                     "text_WnMDXC",
-                    "menu_tfDzGe"
+                    "button_RyTx4C",
+                    "button_EHz8Uy",
+                    "button_3UFdka"
                   ]
                 },
                 "group_7gtHx6": {
