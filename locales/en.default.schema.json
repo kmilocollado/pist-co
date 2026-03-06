@@ -234,7 +234,8 @@
     "video_autoplay": "Videos will be muted by default",
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
-    "media_type_info": "Features are populated from your menu links"
+    "media_type_info": "Features are populated from your menu links",
+    "split_columns": "Every 3 items will start a new column"
   },
   "names": {
     "column": "Column",
@@ -1079,6 +1080,7 @@
     // Checkbox label to toggle visibility of UI elements
     "show": "Show",
     "show_as_accordion": "Show as accordion on mobile",
+    "split_columns": "Split into columns",
     "show_author": "Author",
     "show_alignment": "Show alignment",
     "show_count": "Show count",

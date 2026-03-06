@@ -425,6 +425,7 @@
     "seller_note": "Permitir nota para el vendedor",
     "shape": "Forma",
     "show_as_accordion": "Mostrar como acordeón en móviles",
+    "split_columns": "Dividir en columnas",
     "show_sale_price_first": "Mostrar primero el precio de oferta",
     "show_tax_info": "Información de impuestos",
     "show": "Mostrar",
@@ -1090,7 +1091,8 @@
     "hide_logo_on_home_page_help": "El logo seguirá visible cuando el encabezado fijo esté activo",
     "media_type_info": "Los destacados se completan con los enlaces del menú",
     "logo_height": "Solo afecta el logo del encabezado",
-    "actions_display_style": "Los íconos siempre se usan en la versión móvil"
+    "actions_display_style": "Los íconos siempre se usan en la versión móvil",
+    "split_columns": "Cada 3 elementos pasará a una nueva columna"
   },
   "categories": {
     "basic": "Básico",
