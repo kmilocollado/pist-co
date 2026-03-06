@@ -527,11 +527,38 @@
                 "group_Wf4rMg",
                 "group_7gtHx6"
               ]
+            },
+            "text_dWcqAU": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>© 2026 Pista&Co by Agróptimum, Powered by Shopify</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 50,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "image_t3PME6",
-            "group_Nf6Ax9"
+            "group_Nf6Ax9",
+            "text_dWcqAU"
           ]
         }
       },
@@ -543,8 +570,8 @@
         "section_width": "page-width",
         "gap": 20,
         "color_scheme": "scheme-3",
-        "padding-block-start": 30,
-        "padding-block-end": 30
+        "padding-block-start": 80,
+        "padding-block-end": 80
       }
     }
   },
