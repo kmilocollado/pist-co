@@ -44,7 +44,7 @@
             "extra_link_text": "Contacto",
             "extra_link_url": "shopify://pages/contact",
             "extra_link_border": true,
-            "navigation_bar": true,
+            "navigation_bar": false,
             "color_scheme_navigation_bar": "",
             "drawer_accordion": true,
             "drawer_accordion_expand_first": false,
