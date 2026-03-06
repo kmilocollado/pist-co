@@ -582,7 +582,7 @@
               "name": "t:names.price",
               "static": true,
               "settings": {
-                "show_sale_price_first": true,
+                "show_sale_price_first": false,
                 "type_preset": ""
               },
               "blocks": {}
