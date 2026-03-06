@@ -134,6 +134,20 @@
           {%- endif -%}
         </li>
       {% endfor %}
+      {% if block_settings.show_extra_link and block_settings.extra_link_text != blank %}
+        <li
+          role="presentation"
+          class="menu-list__list-item{% if block_settings.extra_link_border %} menu-list__list-item--extra{% endif %}"
+        >
+          <a
+            href="{{ block_settings.extra_link_url | default: '#' }}"
+            class="menu-list__link"
+            ref="menuitem"
+          >
+            <span class="menu-list__link-title">{{ block_settings.extra_link_text }}</span>
+          </a>
+        </li>
+      {% endif %}
       <li
         class="menu-list__list-item"
         role="presentation"
@@ -269,6 +283,12 @@
 
   .menu-list__list-item[aria-hidden='true'] {
     visibility: hidden;
+  }
+
+  .menu-list__list-item--extra {
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--gap-md, 1rem);
+    margin-left: var(--gap-sm, 0.5rem);
   }
 
   .menu-list__link {
@@ -858,6 +878,36 @@
       "unit": "px",
       "default": 0,
       "visible_if": "{{ block.settings.menu_style != 'text' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.extra_link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_extra_link",
+      "label": "t:settings.show_extra_link",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "extra_link_text",
+      "label": "t:settings.extra_link_text",
+      "default": "Contacto",
+      "visible_if": "{{ block.settings.show_extra_link == true }}"
+    },
+    {
+      "type": "url",
+      "id": "extra_link_url",
+      "label": "t:settings.extra_link_url",
+      "visible_if": "{{ block.settings.show_extra_link == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "extra_link_border",
+      "label": "t:settings.extra_link_border",
+      "default": true,
+      "visible_if": "{{ block.settings.show_extra_link == true }}"
     },
     {
       "type": "header",
