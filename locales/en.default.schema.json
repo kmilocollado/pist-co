@@ -765,6 +765,7 @@
     "add_discount_code": "Allow discounts in cart",
     "add_to_cart_animation": "Add to cart",
     "always_stack_buttons": "Always stack buttons",
+    "show_variant_price_from": "Show variant price (From and highest price)",
     "aspect_ratio": "Aspect ratio",
     "custom_mobile_media": "Show different media on mobile",
     "stack_media_on_mobile": "Stack media",

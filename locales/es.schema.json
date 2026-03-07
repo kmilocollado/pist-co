@@ -469,6 +469,7 @@
     "wrap": "Ajuste de línea",
     "read_only": "Solo lectura",
     "always_stack_buttons": "Apilar siempre los botones",
+    "show_variant_price_from": "Mostrar precio de variantes (Desde y mayor precio)",
     "custom_mobile_width": "Ancho personalizado en móviles",
     "gradient_direction": "Dirección del degradado",
     "headings": "Títulos",
