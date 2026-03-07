@@ -421,6 +421,21 @@
               },
               "blocks": {}
             },
+            "product_format_range_7dagny": {
+              "type": "product-format-range",
+              "name": "t:names.product_format_range",
+              "settings": {
+                "option_name": "Formatos disponibles",
+                "separator": "–",
+                "prefix": "",
+                "suffix": "",
+                "type_preset": "paragraph",
+                "alignment": "center",
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
             "price_JQzVV4": {
               "type": "price",
               "name": "t:names.product_price",
@@ -448,6 +463,7 @@
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
               "settings": {
+                "show_variant_price_from": true,
                 "stacking": false,
                 "show_pickup_availability": false,
                 "gift_card_form": false,
@@ -466,6 +482,7 @@
                 },
                 "add-to-cart": {
                   "type": "add-to-cart",
+                  "disabled": true,
                   "static": true,
                   "settings": {
                     "style_class": "button-secondary"
@@ -486,6 +503,7 @@
           "block_order": [
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
+            "product_format_range_7dagny",
             "price_JQzVV4",
             "buy_buttons_PN7pW3"
           ]
