@@ -436,34 +436,10 @@
               },
               "blocks": {}
             },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": false,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "center",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "buy_buttons_PN7pW3": {
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
               "settings": {
-                "show_variant_price_from": true,
                 "stacking": false,
                 "show_pickup_availability": false,
                 "gift_card_form": false,
@@ -473,6 +449,15 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "variant-price-from": {
+                  "type": "variant-price-from",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary",
+                    "alignment": "center"
+                  },
+                  "blocks": {}
+                },
                 "quantity": {
                   "type": "quantity",
                   "disabled": true,
@@ -504,7 +489,6 @@
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
             "product_format_range_7dagny",
-            "price_JQzVV4",
             "buy_buttons_PN7pW3"
           ]
         }
