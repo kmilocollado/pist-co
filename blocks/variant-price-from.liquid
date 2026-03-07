@@ -14,7 +14,7 @@
     assign display_price_from = price_from_text | replace: '__PRICE__', price_max_formatted
   -%}
   <p
-    class="buy-buttons__price-from text-{{ block_settings.alignment }}"
+    class="buy-buttons__price-from buy-buttons__price-from--{{ block_settings.alignment }}"
     {{ block.shopify_attributes }}
   >
     <span class="button {{ block_settings.style_class | default: 'button-secondary' }}">
