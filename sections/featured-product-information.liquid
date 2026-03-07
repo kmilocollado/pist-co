@@ -209,6 +209,12 @@
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
               "blocks": {
+                "variant-price-from": {
+                  "type": "variant-price-from",
+                  "settings": {
+                    "alignment": "center"
+                  }
+                },
                 "quantity": {
                   "type": "quantity",
                   "static": true
@@ -221,7 +227,8 @@
                   "type": "accelerated-checkout",
                   "static": true
                 }
-              }
+              },
+              "block_order": ["variant-price-from", "quantity", "add-to-cart", "accelerated-checkout"]
             }
           },
           "block_order": ["header", "review_stars", "variant_picker", "buy_buttons"]

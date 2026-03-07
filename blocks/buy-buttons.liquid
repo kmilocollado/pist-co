@@ -71,20 +71,7 @@
           style="{% render 'spacing-style', settings: block_settings %}"
           ref="productFormButtons"
         >
-          {%- if block_settings.show_variant_price_from and product.price_varies -%}
-            {%- liquid
-              if settings.currency_code_enabled_product_pages
-                assign price_max_formatted = product.price_max | money_with_currency
-              else
-                assign price_max_formatted = product.price_max | money
-              endif
-              assign price_from_text = 'content.price_from' | t: price: '__PRICE__'
-              assign display_price_from = price_from_text | replace: '__PRICE__', price_max_formatted
-            -%}
-            <p class="buy-buttons__price-from">
-              <span class="price">{{ display_price_from }}</span>
-            </p>
-          {%- endif -%}
+          {% content_for 'block', type: 'variant-price-from', id: 'variant-price-from' %}
           {%- liquid
             assign has_quantity_rules = false
             if variant.quantity_rule.min > 1 or variant.quantity_rule.increment > 1 or variant.quantity_rule.max != null
@@ -407,7 +394,7 @@
   }
 
   .product-form-buttons--stacked
-    > *:not(.quantity-selector-wrapper, .quantity-rules, .quantity-label, .volume-pricing) {
+    > *:not(.quantity-selector-wrapper, .quantity-rules, .quantity-label, .volume-pricing, .buy-buttons__price-from) {
     flex-basis: 51%;
   }
 
@@ -693,16 +680,24 @@
 {
   "name": "t:names.product_buy_buttons",
   "tag": null,
+  "blocks": [
+    {
+      "type": "variant-price-from"
+    },
+    {
+      "type": "quantity"
+    },
+    {
+      "type": "add-to-cart"
+    },
+    {
+      "type": "accelerated-checkout"
+    }
+  ],
   "settings": [
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_variant_price_from",
-      "label": "t:settings.show_variant_price_from",
-      "default": false
     },
     {
       "type": "checkbox",
@@ -775,23 +770,33 @@
     {
       "name": "t:names.product_buy_buttons",
       "category": "t:categories.product",
-      "blocks": {
-        "quantity": {
+      "blocks": [
+        {
+          "id": "variant-price-from",
+          "type": "variant-price-from",
+          "settings": {
+            "alignment": "center"
+          }
+        },
+        {
+          "id": "quantity",
           "type": "quantity",
           "static": true
         },
-        "add-to-cart": {
+        {
+          "id": "add-to-cart",
           "type": "add-to-cart",
           "static": true,
           "settings": {
             "style_class": "button-secondary"
           }
         },
-        "accelerated-checkout": {
+        {
+          "id": "accelerated-checkout",
           "type": "accelerated-checkout",
           "static": true
         }
-      }
+      ]
     }
   ]
 }

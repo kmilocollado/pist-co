@@ -194,6 +194,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "variant-price-from": {
+                  "type": "variant-price-from",
+                  "settings": {
+                    "alignment": "center"
+                  },
+                  "blocks": {}
+                },
                 "quantity": {
                   "type": "quantity",
                   "static": true,
@@ -215,7 +222,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": []
+              "block_order": ["variant-price-from", "quantity", "add-to-cart", "accelerated-checkout"]
             },
             "text_aEtTtq": {
               "type": "text",

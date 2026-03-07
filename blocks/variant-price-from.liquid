@@ -1,0 +1,37 @@
+{% liquid
+  assign product = closest.product
+  assign block_settings = block.settings
+-%}
+
+{% if product != blank and product.price_varies %}
+  {%- liquid
+    if settings.currency_code_enabled_product_pages
+      assign price_max_formatted = product.price_max | money_with_currency
+    else
+      assign price_max_formatted = product.price_max | money
+    endif
+    assign price_from_text = 'content.price_from' | t: price: '__PRICE__'
+    assign display_price_from = price_from_text | replace: '__PRICE__', price_max_formatted
+  -%}
+  <p
+    class="buy-buttons__price-from text-{{ block_settings.alignment }}"
+    {{ block.shopify_attributes }}
+  >
+    <span class="price">{{ display_price_from }}</span>
+  </p>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:names.variant_price_from",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "default": "center"
+    }
+  ]
+}
+{% endschema %}
