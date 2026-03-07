@@ -236,7 +236,8 @@
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
     "media_type_info": "Features are populated from your menu links",
-    "split_columns": "Every 3 items will start a new column"
+    "split_columns": "Every 3 items will start a new column",
+    "product_format_range_info": "Shows the first and last value of the chosen option (e.g. Formatos disponibles: 500 g – 2 kg)."
   },
   "names": {
     "column": "Column",
@@ -390,6 +391,7 @@
     "product_sku": "SKU",
     "product_review_stars": "Review stars",
     "product_variant_picker": "Variant picker",
+    "product_format_range": "Format range",
     "products_carousel": "Featured collection: Carousel",
     "products_editorial": "Featured collection: Editorial",
     "products_grid": "Featured collection: Grid",
@@ -981,6 +983,7 @@
     "extra_link_border": "Show left border",
     "navigation_bar_color_scheme": "Navigation bar color scheme",
     "opacity": "Opacity",
+    "option_name": "Option name",
     "open_new_tab": "Open link in new tab",
     "open_row_by_default": "Open row by default",
     "overlay": "Overlay",
@@ -995,6 +998,9 @@
     "page_transition_enabled": "Page transition",
     "page_width": "Page width",
     "pagination": "Pagination",
+    "prefix": "Prefix",
+    "separator": "Separator",
+    "suffix": "Suffix",
     "percent_height": "Percent height",
     "percent_size": "Percent size",
     "percent_size_mobile": "Percent size",

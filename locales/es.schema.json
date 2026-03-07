@@ -22,6 +22,7 @@
     "product_description": "Descripción",
     "product_price": "Precio",
     "product_variant_picker": "Selector de variante",
+    "product_format_range": "Rango de formato",
     "slideshow": "Presentación de diapositivas",
     "typography": "Tipografía",
     "video": "Video",
@@ -237,6 +238,7 @@
     "make_section_full_width": "Hacer la sección a ancho completo",
     "minimum_height": "Altura mínima",
     "opacity": "Opacidad",
+    "option_name": "Nombre de la opción",
     "overlay_opacity": "Opacidad de la sobreposición",
     "padding": "Relleno",
     "primary_color": "Enlaces",
@@ -422,6 +424,9 @@
     "padding_top": "Relleno superior",
     "page_width": "Ancho de página",
     "pagination": "Paginación",
+    "prefix": "Prefijo",
+    "separator": "Separador",
+    "suffix": "Sufijo",
     "placement": "Ubicación",
     "position": "Posición",
     "preset": "Preajuste",
@@ -1106,7 +1111,8 @@
     "media_type_info": "Los destacados se completan con los enlaces del menú",
     "logo_height": "Solo afecta el logo del encabezado",
     "actions_display_style": "Los íconos siempre se usan en la versión móvil",
-    "split_columns": "Cada 3 elementos pasará a una nueva columna"
+    "split_columns": "Cada 3 elementos pasará a una nueva columna",
+    "product_format_range_info": "Muestra el primer y el último valor de la opción elegida (ej. Formatos disponibles: 500 g – 2 kg)."
   },
   "categories": {
     "basic": "Básico",

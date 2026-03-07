@@ -1,0 +1,102 @@
+{%- liquid
+  assign product = closest.product
+  assign option_name = block.settings.option_name | default: 'Formatos disponibles'
+  assign option_to_show = null
+  for opt in product.options_with_values
+    if opt.name == option_name
+      assign option_to_show = opt
+      break
+    endif
+  endfor
+-%}
+
+{% if option_to_show != null and option_to_show.values.size > 0 %}
+  {%- liquid
+    assign first_value = option_to_show.values.first.name
+    assign last_value = option_to_show.values.last.name
+    assign separator = block.settings.separator | default: ' – '
+  -%}
+  {% if first_value == last_value %}
+    <span class="product-format-range spacing-style {{ block.settings.type_preset | default: 'paragraph' }}" style="{% render 'spacing-style', settings: block.settings %}" {{ block.shopify_attributes }}>
+      {{ first_value }}
+    </span>
+  {% else %}
+    <span class="product-format-range spacing-style {{ block.settings.type_preset | default: 'paragraph' }}" style="{% render 'spacing-style', settings: block.settings %}" {{ block.shopify_attributes }}>
+      {% if block.settings.prefix != blank %}{{ block.settings.prefix }}{% endif %}
+      {{ first_value }}{{ separator }}{{ last_value }}
+      {% if block.settings.suffix != blank %}{{ block.settings.suffix }}{% endif %}
+    </span>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:names.product_format_range",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:content.product_format_range_info"
+    },
+    {
+      "type": "text",
+      "id": "option_name",
+      "label": "t:settings.option_name",
+      "default": "Formatos disponibles"
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "t:settings.separator",
+      "default": " – "
+    },
+    {
+      "type": "text",
+      "id": "prefix",
+      "label": "t:settings.prefix"
+    },
+    {
+      "type": "text",
+      "id": "suffix",
+      "label": "t:settings.suffix"
+    },
+    {
+      "type": "select",
+      "id": "type_preset",
+      "label": "t:settings.type_preset",
+      "options": [
+        { "value": "", "label": "t:options.default" },
+        { "value": "paragraph", "label": "t:options.paragraph" },
+        { "value": "h6", "label": "t:options.h6" },
+        { "value": "h5", "label": "t:options.h5" },
+        { "value": "h4", "label": "t:options.h4" }
+      ],
+      "default": "paragraph"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}
