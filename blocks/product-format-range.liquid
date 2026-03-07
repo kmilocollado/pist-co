@@ -15,18 +15,21 @@
     assign first_value = option_to_show.values.first.name
     assign last_value = option_to_show.values.last.name
     assign separator = block.settings.separator | default: ' – '
+    assign alignment = block.settings.alignment | default: 'left'
   -%}
-  {% if first_value == last_value %}
-    <span class="product-format-range spacing-style {{ block.settings.type_preset | default: 'paragraph' }}" style="{% render 'spacing-style', settings: block.settings %}" {{ block.shopify_attributes }}>
-      {{ first_value }}
-    </span>
-  {% else %}
-    <span class="product-format-range spacing-style {{ block.settings.type_preset | default: 'paragraph' }}" style="{% render 'spacing-style', settings: block.settings %}" {{ block.shopify_attributes }}>
-      {% if block.settings.prefix != blank %}{{ block.settings.prefix }}{% endif %}
-      {{ first_value }}{{ separator }}{{ last_value }}
-      {% if block.settings.suffix != blank %}{{ block.settings.suffix }}{% endif %}
-    </span>
-  {% endif %}
+  <div class="product-format-range-wrapper text-{{ alignment }}" style="{% render 'spacing-style', settings: block.settings %}" {{ block.shopify_attributes }}>
+    {% if first_value == last_value %}
+      <span class="product-format-range spacing-style {{ block.settings.type_preset | default: 'paragraph' }}">
+        {{ first_value }}
+      </span>
+    {% else %}
+      <span class="product-format-range spacing-style {{ block.settings.type_preset | default: 'paragraph' }}">
+        {% if block.settings.prefix != blank %}{{ block.settings.prefix }}{% endif %}
+        {{ first_value }}{{ separator }}{{ last_value }}
+        {% if block.settings.suffix != blank %}{{ block.settings.suffix }}{% endif %}
+      </span>
+    {% endif %}
+  </div>
 {% endif %}
 
 {% schema %}
@@ -77,6 +80,12 @@
         { "value": "h4", "label": "t:options.h4" }
       ],
       "default": "paragraph"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "default": "center"
     },
     {
       "type": "header",
