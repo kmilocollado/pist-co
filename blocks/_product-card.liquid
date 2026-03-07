@@ -6,6 +6,12 @@
 
 {% capture children %}
   {% content_for 'blocks', closest.product: product %}
+  {%- comment -%} Mostrar selector de variantes (Formatos disponibles, etc.) cuando el producto tiene variantes. {%- endcomment -%}
+  {% unless product.has_only_default_variant %}
+    <div class="product-card__variant-picker">
+      {% render 'variant-main-picker', product_resource: product %}
+    </div>
+  {% endunless %}
 {% endcapture %}
 
 {% render 'product-card', children: children, product: product %}
@@ -37,6 +43,9 @@
     },
     {
       "type": "swatches"
+    },
+    {
+      "type": "variant-picker"
     },
     {
       "type": "_product-card-gallery"

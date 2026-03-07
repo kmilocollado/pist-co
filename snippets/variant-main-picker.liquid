@@ -6,10 +6,20 @@
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
+{% liquid
+  assign _picker_variant_style = block_settings.variant_style | default: 'buttons'
+  assign _picker_show_swatches = block_settings.show_swatches | default: true
+  assign _picker_alignment = block_settings.alignment | default: 'left'
+%}
 
 {% unless product_resource.has_only_default_variant %}
   {% liquid
-    assign button_background_brightness = section.settings.color_scheme.settings.foreground | color_brightness
+    assign _color_scheme = section.settings.color_scheme | default: section.settings.scheme
+    if _color_scheme == blank
+      assign button_background_brightness = 128
+    else
+      assign button_background_brightness = _color_scheme.settings.foreground | color_brightness
+    endif
     if button_background_brightness < 105
       assign strikethrough_color_mix = '#000'
     else
@@ -17,8 +27,8 @@
     endif
   %}
   <variant-picker
-    class="variant-picker spacing-style variant-picker--{{ block_settings.alignment }}"
-    style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block_settings %}"
+    class="variant-picker spacing-style variant-picker--{{ _picker_alignment }}"
+    style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% if block_settings %}{% render 'spacing-style', settings: block_settings %}{% endif %}"
     data-section-id="{{ section.id }}"
     data-product-id="{{ product_resource.id }}"
     data-block-id="{{ block.id }}"
@@ -36,10 +46,10 @@
       {%- for product_option in product_resource.options_with_values -%}
         {%- liquid
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
-          assign variant_style = block_settings.variant_style
+          assign variant_style = _picker_variant_style
 
-          if swatch_count > 0 and block_settings.show_swatches
-            if block_settings.variant_style == 'dropdown'
+          if swatch_count > 0 and _picker_show_swatches
+            if _picker_variant_style == 'dropdown'
               assign variant_style = 'swatch_dropdown'
             else
               assign variant_style = 'swatch'
@@ -66,7 +76,7 @@
               {{- product_option.selected_value -}}
             </span>
           </div>
-        {%- elsif variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
+        {%- elsif variant_style == 'swatch' or _picker_variant_style == 'buttons' -%}
           {%- assign fieldset_index = forloop.index0 -%}
           <fieldset
             class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}"
